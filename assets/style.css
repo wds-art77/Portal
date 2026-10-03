@@ -162,3 +162,19 @@ footer.site a { color: #fff; }
 
 .carte ul { margin: 0; padding-left: 1.2rem; }
 .carte li { margin-bottom: .5rem; }
+
+/* FAQ */
+.faqs { display: grid; gap: .75rem; }
+details.faq { background: var(--carte); border: 1px solid var(--bord); border-radius: 4px; }
+details.faq summary {
+  cursor: pointer; list-style: none; padding: 1rem 2.75rem 1rem 1.25rem; position: relative;
+  color: var(--bleu); font-weight: bold; font-size: 1.05rem;
+}
+details.faq summary::-webkit-details-marker { display: none; }
+details.faq summary::after {
+  content: "+"; position: absolute; right: 1.1rem; top: 50%; transform: translateY(-50%);
+  font-family: system-ui, sans-serif; font-size: 1.4rem; font-weight: normal; color: var(--bleu-clair);
+}
+details.faq[open] summary::after { content: "–"; }
+details.faq[open] summary { border-bottom: 1px solid var(--bord); }
+details.faq p { margin: 0; padding: 1rem 1.25rem 1.1rem; }
