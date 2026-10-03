@@ -159,3 +159,6 @@ footer.site a { color: #fff; }
   form { padding: 1rem; }
   fieldset { padding: .75rem .9rem; }
 }
+
+.carte ul { margin: 0; padding-left: 1.2rem; }
+.carte li { margin-bottom: .5rem; }
