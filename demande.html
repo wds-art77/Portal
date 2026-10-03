@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demande d'aide juridique — AvocatProDeo.com</title>
+  <meta name="description" content="Formulaire de préparation d'une demande d'aide juridique.">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/icone.png">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+  <header class="site">
+    <div class="inner">
+      <a class="logo" href="index.html"><img src="assets/logo.png" alt="AvocatProDeo.com — accueil" width="1000" height="167"></a>
+      <nav aria-label="Navigation principale">
+        <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="demande.html" aria-current="page">Demander de l'aide</a></li>
+        <li><a href="avocats.html">Avocats Pro Deo</a></li>
+        <li><a href="conditions.html">Conditions</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="contenu">
+
+    <h1>Demande d'aide juridique</h1>
+    <p class="lead">Décrivez votre situation et envoyez-nous votre demande&nbsp;: nous l'examinerons
+    et vous recontacterons pour vous orienter.</p>
+
+    <div class="avis">
+      Ce formulaire <strong>ne remplace pas</strong> la demande officielle de désignation d'un avocat Pro Deo,
+      qui est traitée par le <a href="avocats.html">Bureau d'aide juridique</a> de votre arrondissement.
+      Ce portail est <strong>indépendant des Bureaux d'aide juridique</strong>&nbsp;: il nous permet d'examiner votre situation
+      et de vous orienter.
+      Les champs marqués <span style="color:var(--erreur)">*</span> sont obligatoires.
+    </div>
+
+    <form id="demande" action="https://api.simplyforms.app/v1/forms/DfLleUESKEWer8R78UnpyQ" method="POST" enctype="multipart/form-data" novalidate>
+      <input type="hidden" name="subject" id="sujet" value="Demande d'aide juridique — AvocatProDeo.com">
+      <fieldset>
+        <legend>Vos coordonnées</legend>
+        <div class="deux">
+          <div class="champ"><label for="nom">Nom <span class="req">*</span></label>
+            <input type="text" id="nom" name="Nom" autocomplete="family-name"><div class="erreur-champ" id="err-nom"></div></div>
+          <div class="champ"><label for="prenom">Prénom <span class="req">*</span></label>
+            <input type="text" id="prenom" name="Prénom" autocomplete="given-name"><div class="erreur-champ" id="err-prenom"></div></div>
+          <div class="champ"><label for="naissance">Date de naissance</label>
+            <input type="text" id="naissance" name="Date de naissance" class="date" inputmode="numeric" maxlength="10" placeholder="jj/mm/aaaa" autocomplete="bday" aria-describedby="err-naissance">
+            <div class="erreur-champ" id="err-naissance"></div></div>
+          <div class="champ"><label for="email">E-mail <span class="req">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email"><div class="erreur-champ" id="err-email"></div></div>
+          <div class="champ"><label for="telephone">Téléphone <span class="req">*</span></label>
+            <input type="tel" id="telephone" name="Téléphone" autocomplete="tel"><div class="erreur-champ" id="err-telephone"></div></div>
+        </div>
+        <div class="champ"><label for="adresse">Adresse (rue et numéro)</label>
+          <input type="text" id="adresse" name="Adresse" autocomplete="street-address"></div>
+        <div class="champ"><label for="commune">Code postal et commune <span class="req">*</span></label>
+          <input type="text" id="commune" name="Code postal et commune" autocomplete="postal-code">
+          <div class="aide">Permet de déterminer le Bureau d'aide juridique compétent.</div>
+          <div class="erreur-champ" id="err-commune"></div></div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Votre situation</legend>
+        <div class="champ"><label for="situation">Situation de revenus <span class="req">*</span></label>
+          <select id="situation" name="Situation de revenus">
+            <option value="">— Choisir —</option>
+              <option value="Revenu d'intégration ou aide du CPAS">Revenu d'intégration ou aide du CPAS</option>
+              <option value="Garantie de revenus aux personnes âgées (GRAPA)">Garantie de revenus aux personnes âgées (GRAPA)</option>
+              <option value="Allocation de remplacement de revenus (handicap)">Allocation de remplacement de revenus (handicap)</option>
+              <option value="Allocations de chômage / mutuelle">Allocations de chômage / mutuelle</option>
+              <option value="Salaire / revenus professionnels modestes">Salaire / revenus professionnels modestes</option>
+              <option value="Je suis mineur(e)">Je suis mineur(e)</option>
+              <option value="Je suis détenu(e)">Je suis détenu(e)</option>
+              <option value="Demandeur d'asile / procédure de séjour">Demandeur d'asile / procédure de séjour</option>
+              <option value="Autre situation">Autre situation</option>
+          </select>
+          <div class="aide">Certaines situations ouvrent un droit présumé à l'aide gratuite. Le BAJ vérifie les justificatifs.</div>
+          <div class="erreur-champ" id="err-situation"></div></div>
+        <div class="champ"><label for="charges">Nombre de personnes à charge</label>
+          <input type="text" id="charges" name="Personnes à charge" inputmode="numeric"></div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Votre demande</legend>
+        <div class="champ"><label for="domaine">Domaine concerné <span class="req">*</span></label>
+          <select id="domaine" name="Domaine du droit">
+            <option value="">— Choisir —</option>
+              <option value="Famille (divorce, garde d'enfants, pension alimentaire)">Famille (divorce, garde d'enfants, pension alimentaire)</option>
+              <option value="Pénal (victime ou prévenu)">Pénal (victime ou prévenu)</option>
+              <option value="Logement / bail">Logement / bail</option>
+              <option value="Travail / licenciement">Travail / licenciement</option>
+              <option value="Sécurité sociale, CPAS, chômage, allocations">Sécurité sociale, CPAS, chômage, allocations</option>
+              <option value="Dettes / règlement collectif">Dettes / règlement collectif</option>
+              <option value="Droit des étrangers / séjour / asile">Droit des étrangers / séjour / asile</option>
+              <option value="Jeunesse / mineurs">Jeunesse / mineurs</option>
+              <option value="Roulage / accident">Roulage / accident</option>
+              <option value="Consommation / contrats">Consommation / contrats</option>
+              <option value="Administratif / fiscal">Administratif / fiscal</option>
+              <option value="Autre / je ne sais pas">Autre / je ne sais pas</option>
+          </select><div class="erreur-champ" id="err-domaine"></div></div>
+        <div class="deux">
+          <div class="champ"><label for="adverse">Partie adverse (si connue)</label>
+            <input type="text" id="adverse" name="Partie adverse"></div>
+          <div class="champ"><label for="echeance">Date d'audience ou délai à respecter</label>
+            <input type="text" id="echeance" name="Audience ou délai" class="date" inputmode="numeric" maxlength="10" placeholder="jj/mm/aaaa" aria-describedby="err-echeance">
+            <div class="erreur-champ" id="err-echeance"></div></div>
+        </div>
+        <div class="champ choix"><label><input type="checkbox" id="urgent" name="Urgent" value="OUI"> Ma demande est urgente (audience ou délai dans les 15 jours)</label></div>
+        <div class="champ"><label for="description">Décrivez brièvement votre problème <span class="req">*</span></label>
+          <textarea id="description" name="Description" maxlength="1500"></textarea>
+          <div class="aide">1500 caractères maximum. N'indiquez pas de numéro de registre national ni de données médicales détaillées.</div>
+          <div class="erreur-champ" id="err-description"></div></div>
+        <div class="champ"><label for="piece">Joindre un document (facultatif)</label>
+          <input type="file" id="piece" name="attachment" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,image/jpeg,image/png" aria-describedby="aide-piece err-piece">
+          <div class="aide" id="aide-piece">Un seul fichier&nbsp;: PDF, Word (.doc, .docx) ou photo (JPG, PNG), 1&nbsp;Mo maximum.
+          Les photos trop lourdes sont réduites automatiquement. Pour plusieurs pages, regroupez-les dans un seul PDF.</div>
+          <div class="erreur-champ" id="err-piece"></div></div>
+      </fieldset>
+
+      <section class="avis" aria-labelledby="titre-avant-envoi">
+        <h2 id="titre-avant-envoi" style="margin-top:0;font-size:1.15rem">Important — à lire avant l'envoi</h2>
+        <ul>
+          <li><strong>Portail indépendant.</strong> AvocatProDeo.com est indépendant des Bureaux d'aide juridique (BAJ)
+            et des barreaux. Seul le BAJ de votre arrondissement peut accorder l'aide juridique de deuxième ligne (« Pro Deo »).</li>
+          <li><strong>Transmission à un avocat partenaire.</strong> Votre demande, ainsi que le document joint éventuel,
+            peut être transmise à un avocat partenaire afin d'examiner une éventuelle prise en charge de votre dossier.</li>
+          <li><strong>Aucune garantie.</strong> Cette transmission ne garantit ni l'acceptation de votre dossier par un avocat,
+            ni l'octroi de l'aide juridique Pro Deo, qui relève de la seule décision du BAJ.</li>
+          <li><strong>Libre choix de votre avocat.</strong> Vous restez entièrement libre de choisir votre avocat,
+            y compris un autre avocat que celui qui vous serait proposé.</li>
+        </ul>
+      </section>
+
+      <div class="champ choix"><label><input type="checkbox" id="information" name="Information préalable lue" value="Oui">
+        <span>J'ai lu et compris les informations ci-dessus. <span class="req">*</span></span></label>
+        <div class="erreur-champ" id="err-information"></div></div>
+
+      <div class="champ choix"><label><input type="checkbox" id="consentement" name="Consentement RGPD" value="Oui">
+        <span>J'accepte que les informations transmises soient utilisées pour traiter ma demande
+        et, le cas échéant, communiquées à un avocat partenaire, conformément à la <a href="confidentialite.html">politique de confidentialité</a>. <span class="req">*</span></span></label>
+        <div class="erreur-champ" id="err-consentement"></div></div>
+
+      <button type="submit" class="btn" id="envoyer">Envoyer ma demande</button>
+      <p class="erreur-champ" id="erreur-envoi" role="alert"></p>
+    </form>
+
+    <section id="resultat" class="carte" hidden aria-live="polite"></section>
+
+  </main>
+  <footer class="site">
+    <div class="inner">
+      <p>Ce portail fournit une information générale et ne constitue pas une consultation juridique.
+      L'aide juridique de deuxième ligne (« Pro Deo ») est accordée exclusivement par les Bureaux d'aide juridique (BAJ) des barreaux.</p>
+      <p><a href="confidentialite.html">Protection des données</a></p>
+    </div>
+  </footer>
+  <script src="assets/formulaire.js"></script>
+</body>
+</html>
