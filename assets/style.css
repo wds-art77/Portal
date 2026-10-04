@@ -178,3 +178,9 @@ details.faq summary::after {
 details.faq[open] summary::after { content: "–"; }
 details.faq[open] summary { border-bottom: 1px solid var(--bord); }
 details.faq p { margin: 0; padding: 1rem 1.25rem 1.1rem; }
+
+/* Bouton d'appel de la page Avocats Pro Deo */
+.appel { margin: 1.5rem 0 0; }
+.appel .aide { margin: .5rem 0 0; }
+.btn.grand { font-size: 1.1rem; padding: .95rem 1.75rem; box-shadow: 0 4px 14px rgba(9,47,101,.2); }
+@media (max-width: 600px) { .btn.grand { display: block; text-align: center; padding: .9rem 1rem; } }
