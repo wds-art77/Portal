@@ -7,15 +7,31 @@
   <meta name="description" content="Politique de protection des données personnelles du portail.">
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/icone.png">
-  <link rel="stylesheet" href="assets/style.css?v=aeea859c">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-5493752474"></script>
+  <link rel="stylesheet" href="assets/style.css?v=30c432b6">
+  <!-- Google tag (gtag.js) : chargée uniquement après consentement (voir assets/consentement.js) -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied'
+    });
     gtag('js', new Date());
     gtag('config', 'AW-5493752474');
+    window.chargerGoogleAds = function () {
+      if (window.googleAdsCharge) return;
+      window.googleAdsCharge = true;
+      gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted' });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-5493752474';
+      document.head.appendChild(s);
+    };
+    try {
+      var c = JSON.parse(localStorage.getItem('consentement-cookies') || 'null');
+      if (c && c.choix === 'accepte' && Date.now() - c.date < 182 * 864e5) window.chargerGoogleAds();
+    } catch (e) {}
   </script>
+  <script src="assets/consentement.js?v=30c432b6" defer></script>
 </head>
 <body>
   <a class="skip" href="#contenu">Aller au contenu</a>
@@ -74,17 +90,22 @@
     (<a href="https://www.autoriteprotectiondonnees.be" rel="noopener">autoriteprotectiondonnees.be</a>).</p>
 
     <h2>Cookies et mesure publicitaire</h2>
-    <p>Ce site utilise la balise Google Ads (Google Ireland Limited / Google LLC) afin de mesurer l'efficacité
-    de nos annonces publicitaires. Cette balise peut déposer des cookies et transmettre à Google des informations
-    techniques sur votre visite (pages consultées, type d'appareil, adresse IP). Le contenu du formulaire
-    de demande n'est pas transmis à Google.</p>
+    <p>Avec votre accord uniquement, ce site utilise la balise Google Ads (Google Ireland Limited / Google LLC)
+    afin de mesurer l'efficacité de nos annonces publicitaires. Cette balise peut alors déposer des cookies et transmettre
+    à Google des informations techniques sur votre visite (pages consultées, type d'appareil, adresse IP).
+    Le contenu du formulaire de demande n'est pas transmis à Google.</p>
+    <p>Tant que vous n'avez pas cliqué sur «&nbsp;Accepter&nbsp;» dans le bandeau d'information, la balise Google n'est pas chargée
+    et aucun cookie publicitaire n'est déposé. Votre choix est conservé dans votre navigateur pendant 6 mois.
+    Vous pouvez le modifier ou retirer votre consentement à tout moment&nbsp;:
+    <button type="button" class="lien-cookies" data-gerer-cookies>gérer mes préférences de cookies</button>.</p>
 
   </main>
   <footer class="site">
     <div class="inner">
       <p>Ce portail fournit une information générale et ne constitue pas une consultation juridique.
       L'aide juridique de deuxième ligne («&nbsp;Pro Deo&nbsp;») est accordée exclusivement par les Bureaux d'aide juridique (BAJ) des barreaux.</p>
-      <p><a href="confidentialite.html">Protection des données</a></p>
+      <p><a href="confidentialite.html">Protection des données</a> ·
+        <button type="button" class="lien-cookies" data-gerer-cookies>Gérer les cookies</button></p>
     </div>
   </footer>
 </body>

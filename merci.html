@@ -7,15 +7,31 @@
   <meta name="description" content="Confirmation de l'envoi de votre demande d'aide juridique.">
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/icone.png">
-  <link rel="stylesheet" href="assets/style.css?v=aeea859c">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-5493752474"></script>
+  <link rel="stylesheet" href="assets/style.css?v=30c432b6">
+  <!-- Google tag (gtag.js) : chargée uniquement après consentement (voir assets/consentement.js) -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied'
+    });
     gtag('js', new Date());
     gtag('config', 'AW-5493752474');
+    window.chargerGoogleAds = function () {
+      if (window.googleAdsCharge) return;
+      window.googleAdsCharge = true;
+      gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted' });
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-5493752474';
+      document.head.appendChild(s);
+    };
+    try {
+      var c = JSON.parse(localStorage.getItem('consentement-cookies') || 'null');
+      if (c && c.choix === 'accepte' && Date.now() - c.date < 182 * 864e5) window.chargerGoogleAds();
+    } catch (e) {}
   </script>
+  <script src="assets/consentement.js?v=30c432b6" defer></script>
 </head>
 <body>
   <a class="skip" href="#contenu">Aller au contenu</a>
@@ -51,7 +67,8 @@
     <div class="inner">
       <p>Ce portail fournit une information générale et ne constitue pas une consultation juridique.
       L'aide juridique de deuxième ligne («&nbsp;Pro Deo&nbsp;») est accordée exclusivement par les Bureaux d'aide juridique (BAJ) des barreaux.</p>
-      <p><a href="confidentialite.html">Protection des données</a></p>
+      <p><a href="confidentialite.html">Protection des données</a> ·
+        <button type="button" class="lien-cookies" data-gerer-cookies>Gérer les cookies</button></p>
     </div>
   </footer>
 </body>

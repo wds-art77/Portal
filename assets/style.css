@@ -184,3 +184,27 @@ details.faq p { margin: 0; padding: 1rem 1.25rem 1.1rem; }
 .appel .aide { margin: .5rem 0 0; }
 .btn.grand { font-size: 1.1rem; padding: .95rem 1.75rem; box-shadow: 0 4px 14px rgba(9,47,101,.2); }
 @media (max-width: 600px) { .btn.grand { display: block; text-align: center; padding: .9rem 1rem; } }
+
+/* Bandeau de cookies */
+.bandeau-cookies {
+  position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 50;
+  max-width: 760px; margin: 0 auto; padding: 1rem 1.25rem;
+  background: #fff; border: 1px solid var(--bord); border-top: 4px solid var(--bleu); border-radius: 6px;
+  box-shadow: 0 8px 30px rgba(9,47,101,.25);
+  display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem;
+  font-family: system-ui, sans-serif; font-size: .9rem;
+}
+.bandeau-cookies p { margin: 0; flex: 1 1 320px; }
+.bandeau-boutons { display: flex; gap: .6rem; flex: 0 0 auto; }
+.bandeau-boutons .btn { padding: .6rem 1.2rem; font-size: .95rem; min-width: 7.5rem; }
+@media (max-width: 600px) {
+  .bandeau-cookies { left: .5rem; right: .5rem; bottom: .5rem; padding: .9rem 1rem; }
+  .bandeau-boutons { flex: 1 1 100%; }
+  .bandeau-boutons .btn { flex: 1 1 0; min-width: 0; }
+}
+.lien-cookies {
+  background: none; border: 0; padding: 0; font: inherit; color: inherit;
+  text-decoration: underline; cursor: pointer;
+}
+footer.site .lien-cookies { color: #fff; }
+@media print { .bandeau-cookies { display: none !important; } }
