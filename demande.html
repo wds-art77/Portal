@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Demande d'aide juridique — AvocatProDeo.com</title>
-  <meta name="description" content="Formulaire de préparation d'une demande d'aide juridique.">
+  <meta name="description" content="Formulaire de demande d'avocat Pro Deo en droit pénal et roulage.">
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/icone.png">
-  <link rel="stylesheet" href="assets/style.css?v=30c432b6">
+  <link rel="stylesheet" href="assets/style.css?v=d4587016">
   <!-- Google tag (gtag.js) : chargée uniquement après consentement (voir assets/consentement.js) -->
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -31,7 +31,7 @@
       if (c && c.choix === 'accepte' && Date.now() - c.date < 182 * 864e5) window.chargerGoogleAds();
     } catch (e) {}
   </script>
-  <script src="assets/consentement.js?v=30c432b6" defer></script>
+  <script src="assets/consentement.js?v=d4587016" defer></script>
 </head>
 <body>
   <a class="skip" href="#contenu">Aller au contenu</a>
@@ -41,6 +41,7 @@
       <nav aria-label="Navigation principale">
         <ul>
         <li><a href="index.html">Accueil</a></li>
+        <li><a href="penal.html">Pénal et roulage</a></li>
         <li><a href="demande.html" aria-current="page">Demander de l'aide</a></li>
         <li><a href="avocats.html">Avocats Pro Deo</a></li>
         <li><a href="conditions.html">Conditions</a></li>
@@ -54,8 +55,13 @@
   <main id="contenu">
 
     <h1>Demande d'aide juridique</h1>
-    <p class="lead">Décrivez votre situation et envoyez-nous votre demande&nbsp;: nous l'examinerons
-    et vous recontacterons pour vous orienter.</p>
+    <p class="lead">Pour les dossiers <strong>pénaux et de roulage</strong> uniquement. Décrivez votre situation
+    et envoyez-nous votre demande&nbsp;: nous l'examinerons et vous recontacterons pour vous orienter.</p>
+
+    <div class="alerte">
+      <strong>Vous êtes arrêté ou privé de liberté&nbsp;?</strong> Ce formulaire n'est pas traité en temps réel.
+      Demandez immédiatement à la police à consulter un avocat avant votre audition&nbsp;: c'est votre droit.
+    </div>
 
     <div class="avis">
       Ce formulaire <strong>ne remplace pas</strong> la demande officielle de désignation d'un avocat Pro Deo,
@@ -112,36 +118,56 @@
       </fieldset>
 
       <fieldset>
-        <legend>Votre demande</legend>
-        <div class="champ"><label for="domaine">Domaine concerné <span class="req">*</span></label>
-          <select id="domaine" name="Domaine du droit">
+        <legend>Votre dossier</legend>
+        <div class="champ"><label for="domaine">Type de dossier <span class="req">*</span></label>
+          <select id="domaine" name="Type de dossier">
             <option value="">— Choisir —</option>
-              <option value="Famille (divorce, garde d'enfants, pension alimentaire)">Famille (divorce, garde d'enfants, pension alimentaire)</option>
-              <option value="Pénal (victime ou prévenu)">Pénal (victime ou prévenu)</option>
-              <option value="Logement / bail">Logement / bail</option>
-              <option value="Travail / licenciement">Travail / licenciement</option>
-              <option value="Sécurité sociale, CPAS, chômage, allocations">Sécurité sociale, CPAS, chômage, allocations</option>
-              <option value="Dettes / règlement collectif">Dettes / règlement collectif</option>
-              <option value="Droit des étrangers / séjour / asile">Droit des étrangers / séjour / asile</option>
-              <option value="Jeunesse / mineurs">Jeunesse / mineurs</option>
-              <option value="Roulage / accident">Roulage / accident</option>
-              <option value="Consommation / contrats">Consommation / contrats</option>
-              <option value="Administratif / fiscal">Administratif / fiscal</option>
+              <option value="Audition par la police (droit Salduz)">Audition par la police (droit Salduz)</option>
+              <option value="Juge d'instruction (inculpation, mandat d'arrêt, chambre du conseil)">Juge d'instruction (inculpation, mandat d'arrêt, chambre du conseil)</option>
+              <option value="Chambre des mises en accusation">Chambre des mises en accusation</option>
+              <option value="Tribunal correctionnel">Tribunal correctionnel</option>
+              <option value="Appel en matière pénale (cour d'appel)">Appel en matière pénale (cour d'appel)</option>
+              <option value="Cour d'assises">Cour d'assises</option>
+              <option value="Tribunal de police (roulage)">Tribunal de police (roulage)</option>
+              <option value="Tribunal de l'application des peines">Tribunal de l'application des peines</option>
+              <option value="Tribunal de la jeunesse (mineur poursuivi pour des faits qualifiés infraction)">Tribunal de la jeunesse (mineur poursuivi pour des faits qualifiés infraction)</option>
+              <option value="Victime d'une infraction ou d'un accident de la route">Victime d'une infraction ou d'un accident de la route</option>
+              <option value="Autre matière (non pénale)">Autre matière (non pénale)</option>
+          </select><div class="erreur-champ" id="err-domaine"></div>
+          <div class="alerte" id="hors-perimetre" hidden>
+            <strong>Ce portail ne traite que les dossiers pénaux et de roulage.</strong>
+            Pour une autre matière, adressez-vous directement au <a href="avocats.html">Bureau d'aide juridique</a>
+            de votre arrondissement, qui pourra vous désigner un avocat Pro Deo.
+          </div></div>
+        <div class="champ"><label for="qualite">Vous êtes <span class="req">*</span></label>
+          <select id="qualite" name="Qualité">
+            <option value="">— Choisir —</option>
+              <option value="Suspect / convoqué pour une audition">Suspect / convoqué pour une audition</option>
+              <option value="Inculpé">Inculpé</option>
+              <option value="Prévenu ou accusé (cité devant un tribunal)">Prévenu ou accusé (cité devant un tribunal)</option>
+              <option value="Condamné">Condamné</option>
+              <option value="Victime / partie civile">Victime / partie civile</option>
+              <option value="Parent ou proche de la personne concernée">Parent ou proche de la personne concernée</option>
               <option value="Autre / je ne sais pas">Autre / je ne sais pas</option>
-          </select><div class="erreur-champ" id="err-domaine"></div></div>
+          </select><div class="erreur-champ" id="err-qualite"></div></div>
         <div class="deux">
-          <div class="champ"><label for="adverse">Partie adverse (si connue)</label>
-            <input type="text" id="adverse" name="Partie adverse"></div>
-          <div class="champ"><label for="echeance">Date d'audience ou délai à respecter</label>
+          <div class="champ"><label for="juridiction">Juridiction ou service de police concerné</label>
+            <input type="text" id="juridiction" name="Juridiction / police" placeholder="ex. : tribunal correctionnel de Liège"></div>
+          <div class="champ"><label for="reference">Numéro de notice ou de procès-verbal (si connu)</label>
+            <input type="text" id="reference" name="Référence (notice / PV)"></div>
+          <div class="champ"><label for="echeance">Date d'audience, d'audition ou de convocation</label>
             <input type="text" id="echeance" name="Audience ou délai" class="date" inputmode="numeric" maxlength="10" placeholder="jj/mm/aaaa" aria-describedby="err-echeance">
             <div class="erreur-champ" id="err-echeance"></div></div>
+          <div class="champ"><label for="adverse">Autre partie (victime, prévenu, assureur… si connue)</label>
+            <input type="text" id="adverse" name="Autre partie"></div>
         </div>
-        <div class="champ choix"><label><input type="checkbox" id="urgent" name="Urgent" value="OUI"> Ma demande est urgente (audience ou délai dans les 15 jours)</label></div>
-        <div class="champ"><label for="description">Décrivez brièvement votre problème <span class="req">*</span></label>
+        <div class="champ choix"><label><input type="checkbox" id="detenu" name="Personne détenue" value="OUI"> La personne concernée est actuellement détenue</label></div>
+        <div class="champ choix"><label><input type="checkbox" id="urgent" name="Urgent" value="OUI"> Ma demande est urgente (audience, audition ou délai dans les 15 jours)</label></div>
+        <div class="champ"><label for="description">Décrivez brièvement les faits et la procédure <span class="req">*</span></label>
           <textarea id="description" name="Description" maxlength="1500"></textarea>
           <div class="aide">1500 caractères maximum. N'indiquez pas de numéro de registre national ni de données médicales détaillées.</div>
           <div class="erreur-champ" id="err-description"></div></div>
-        <div class="champ"><label for="piece">Joindre un document (facultatif)</label>
+        <div class="champ"><label for="piece">Joindre un document (facultatif) — convocation, citation, jugement…</label>
           <input type="file" id="piece" name="attachment" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,image/jpeg,image/png" aria-describedby="aide-piece err-piece">
           <div class="aide" id="aide-piece">Un seul fichier&nbsp;: PDF, Word (.doc, .docx) ou photo (JPG, PNG), 1&nbsp;Mo maximum.
           Les photos trop lourdes sont réduites automatiquement. Pour plusieurs pages, regroupez-les dans un seul PDF.</div>
@@ -186,6 +212,6 @@
         <button type="button" class="lien-cookies" data-gerer-cookies>Gérer les cookies</button></p>
     </div>
   </footer>
-  <script src="assets/formulaire.js?v=30c432b6"></script>
+  <script src="assets/formulaire.js?v=d4587016"></script>
 </body>
 </html>

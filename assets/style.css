@@ -208,3 +208,16 @@ details.faq p { margin: 0; padding: 1rem 1.25rem 1.1rem; }
 }
 footer.site .lien-cookies { color: #fff; }
 @media print { .bandeau-cookies { display: none !important; } }
+
+/* Alerte (privation de liberté, hors périmètre) */
+.alerte {
+  background: #fdecea; border: 1px solid #f1b8b2; border-left: 5px solid var(--erreur);
+  padding: .9rem 1.15rem; border-radius: 4px; margin: 1.25rem 0;
+  font-family: system-ui, sans-serif; font-size: .95rem;
+}
+.champ .alerte { margin: .6rem 0 0; }
+.faq-corps { padding: .25rem 1.25rem 1rem; }
+details.faq .faq-corps p { padding: 0; margin: .75rem 0 0; }
+.faq-corps ul { margin: .75rem 0 0; padding-left: 1.2rem; }
+.faq-corps li { margin-bottom: .4rem; }
+.source { font-family: system-ui, sans-serif; font-size: .8rem; color: var(--gris); }

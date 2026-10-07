@@ -7,7 +7,7 @@
   var erreurEnvoi = document.getElementById("erreur-envoi");
   var CONTACT = "contact@avocatprodeo.com";
 
-  var obligatoires = ["nom", "prenom", "email", "telephone", "commune", "domaine", "situation", "description", "information", "consentement"];
+  var obligatoires = ["nom", "prenom", "email", "telephone", "commune", "domaine", "qualite", "situation", "description", "information", "consentement"];
 
   function champ(id) { return document.getElementById(id); }
 
@@ -144,6 +144,17 @@
     });
   }
 
+  // Périmètre : uniquement pénal et roulage
+  var HORS = "Autre matière (non pénale)";
+  var horsPerimetre = document.getElementById("hors-perimetre");
+  function verifierPerimetre() {
+    var hors = valeur("domaine") === HORS;
+    if (horsPerimetre) horsPerimetre.hidden = !hors;
+    bouton.disabled = hors;
+    return !hors;
+  }
+  if (champ("domaine")) champ("domaine").addEventListener("change", verifierPerimetre);
+
   function valider() {
     var premier = null;
     obligatoires.forEach(function (id) {
@@ -155,6 +166,7 @@
       marquerErreur(id, msg);
       if (msg && !premier) premier = champ(id);
     });
+    if (!verifierPerimetre() && !premier) premier = champ("domaine");
     var premierDate = validerDates();
     premier = premier || premierDate;
     if (premier) premier.focus();
@@ -173,8 +185,9 @@
     erreurEnvoi.textContent = "";
     if (!valider()) return;
 
-    champ("sujet").value = "Demande d'aide juridique — " + valeur("nom").toUpperCase() + " " + valeur("prenom") +
-      (champ("urgent").checked ? " [URGENT]" : "");
+    champ("sujet").value = (champ("urgent").checked || champ("detenu").checked ? "[URGENT] " : "") +
+      valeur("domaine").replace(/ \(.*\)$/, "") + " — " + valeur("nom").toUpperCase() + " " + valeur("prenom") +
+      (champ("detenu").checked ? " [DÉTENU]" : "");
 
     bouton.disabled = true;
     bouton.textContent = "Envoi en cours…";
