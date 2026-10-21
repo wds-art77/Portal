@@ -141,7 +141,8 @@ main { display: block; }
 .section > .inner > h2:first-child, .section > .inner > .surtitre:first-child { margin-top: 0; }
 .en-tete-section { max-width: 760px; margin-bottom: 2rem; }
 .en-tete-section p { color: var(--gris); font-size: 1.05rem; }
-.deux-colonnes { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center; }
+.deux-colonnes { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; }
+.deux-colonnes > div > h2:first-child, .deux-colonnes > div > .surtitre:first-child { margin-top: 0; }
 .trois-colonnes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 @media (max-width: 860px) { .deux-colonnes, .trois-colonnes { grid-template-columns: 1fr; gap: 1.5rem; } }
 

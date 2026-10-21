@@ -34,8 +34,9 @@ sur la page `mentions-legales.html` (classe `a-completer`) ou signalés ici :
 2. **Adresse e-mail** : le site affiche `contact@conditionsgenerales.be`. Créez cette boîte chez votre
    fournisseur de messagerie ou remplacez l'adresse dans toutes les pages
    (`grep -rl "contact@conditionsgenerales.be" . | xargs sed -i 's/contact@conditionsgenerales.be/votre@adresse/g'`).
-3. **Téléphone** : le numéro affiché est `+33 7 59 41 78 05`. Pour un numéro belge, remplacez-le de la même
-   manière (texte `+33 7 59 41 78 05` et lien `tel:+33759417805`).
+3. **Téléphone** : le numéro affiché est `+33 7 59 41 78 05` (écrit `+33&nbsp;7&nbsp;59&nbsp;41&nbsp;78&nbsp;05` dans
+   le code, avec des espaces insécables). Pour un numéro belge, remplacez ce texte et le lien `tel:+33759417805`
+   dans toutes les pages.
 4. **Formulaires** (voir ci-dessous) : identifiant du service de formulaires à insérer.
 5. **Biographie** (`a-propos.html`) et **délai de réponse** (« 48 heures ouvrables », présent sur de nombreuses
    pages) : relisez et ajustez ces engagements.
