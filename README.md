@@ -64,14 +64,39 @@ Une pièce jointe (PDF, Word, OpenDocument, JPG ou PNG) peut être ajoutée au f
 1 Mo maximum avec la formule gratuite (les photos plus lourdes sont réduites automatiquement dans le navigateur).
 Pour changer la limite, modifiez `LIMITE` dans `assets/formulaire.js` et le texte d'aide dans `analyse-gratuite.html`.
 
+## Méthode de rédaction et de vérification
+
+Les textes ont été produits en octobre 2026 selon la méthode suivante :
+
+1. Huit fiches de faits juridiques belges (Livre 5 du Code civil, Code de droit économique B2C et B2B,
+   recouvrement, construction, horeca/immobilier/freelances, e-commerce, déontologie de l'avocat et RGPD),
+   rédigées à partir de sources officielles (textes adoptés par la Chambre, Moniteur belge, SPF, ONSS, IPI,
+   AVOCATS.BE) puis contestées par deux relecteurs indépendants (actualité 2023-2026 ; exactitude des articles,
+   montants et délais) et corrigées. Tout point non vérifiable a été marqué « non vérifié » et exclu du site.
+2. Chaque page a été rédigée à partir de ces seules fiches, puis relue par un vérificateur juridique et un
+   relecteur éditorial, et corrigée (plus de 600 constats traités).
+3. Contrôles automatiques : HTML valide (html-validate), liens internes et ancres, hiérarchie des titres,
+   étiquettes de formulaire, captures d'écran de chaque page en largeur 1280 et 390 px.
+
+Points de déontologie signalés par les fiches, à trancher par l'avocat avant la mise en ligne :
+
+- l'offre d'« analyse gratuite » n'est pas interdite en soi, mais la fiche recommande de documenter la
+  notification ou l'autorisation du bâtonnier (Code de déontologie de l'avocat, publicité et offre de services) ;
+- le site ne publie ni témoignages, ni avis Google, ni statistiques de clients, ni comparaison avec des
+  confrères, conformément au Code de déontologie ;
+- les taux et plafonds cités (intérêts de retard de la loi du 2 août 2002, Livre XIX du CDE) sont datés et
+  doivent être revus à chaque semestre ; le Livre 7 du nouveau Code civil (contrats spéciaux) entre en vigueur
+  le 1er septembre 2027 et imposera une relecture des pages construction et webshop.
+
 ## Mise en ligne (GitHub Pages)
 
 GitHub Pages ne sert qu'**un seul site par dépôt** : avocatprodeo.com est déjà servi par le dépôt `Portal`.
 Le site conditionsgenerales.be doit donc vivre dans un dépôt distinct.
 
-1. Sur github.com, créez un dépôt **public** nommé `conditionsgenerales` (sans README).
+1. Sur github.com, créez un dépôt **public** nommé `conditionsgenerales` (sans README), puis donnez-y accès
+   à l'application GitHub de Claude (la création du dépôt depuis une session Claude a été refusée par GitHub).
 2. Poussez-y cette branche comme branche `main` (depuis un ordinateur disposant de git, ou demandez-le à Claude
-   une fois le dépôt créé) :
+   une fois le dépôt créé et autorisé) :
    `git push https://github.com/wds-art77/conditionsgenerales.git claude/conditionsgenerales-be:main`
 3. Dans le nouveau dépôt : **Settings → Pages → Source : Deploy from a branch**, branche `main`, dossier
    `/ (root)`, **Save**.
