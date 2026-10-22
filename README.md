@@ -60,6 +60,11 @@ sur la page `mentions-legales.html` (classe `a-completer`) ou signalés ici :
     `confidentialite.html`.
 11. **À propos** : confirmer les fonctions d'enseignement mentionnées (Université de Hasselt, Haute École PXL) ;
     à défaut, supprimer la phrase.
+12. **Taux semestriels à mettre à jour au 1er janvier 2027** (puis à chaque semestre) : les pages citent les
+    taux du second semestre 2026, notamment 12,40 % en France (taux BCE majoré de 10 points, art. L. 441-10
+    du Code de commerce) et 10,40 % au Luxembourg (loi modifiée du 18 avril 2004), ainsi que les taux belges
+    de la loi du 2 août 2002. Pour retrouver les pages concernées : `grep -rl "12,40" france/`,
+    `grep -rl "10,40" luxembourg/`. En Suisse, le taux légal de 5 % (art. 104 CO) est fixe.
 
 ## Fonctionnement des formulaires
 
@@ -89,6 +94,11 @@ Les textes ont été produits en octobre 2026 selon la méthode suivante :
    et un relecteur éditorial, et corrigée ; un contrôle de cohérence par section et entre sections a suivi.
 3. Contrôles automatiques : HTML valide (html-validate), liens internes et ancres, hiérarchie des titres,
    étiquettes de formulaire, captures d'écran de chaque page en largeur 1280 et 390 px.
+
+Les fiches de chaque pays sont conservées dans le dossier `_documentation/` (`fiches-be`, `fiches-fr`,
+`fiches-lu`, `fiches-ch`, chacune avec un `INDEX.md` qui liste les règles retenues, les points non vérifiés et
+les chiffres autorisés). Ce dossier reste dans le dépôt mais n'est pas publié sur le site : GitHub Pages
+ignore les dossiers dont le nom commence par un tiret bas.
 
 Points de déontologie signalés par les fiches, à trancher par l'avocat avant la mise en ligne :
 

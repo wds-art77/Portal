@@ -288,6 +288,7 @@ details.faq[open] summary { border-bottom: 1px solid var(--bord); }
 .encadre h3, .encadre h4 { margin-top: 0; color: var(--accent-2); font-size: 1.05rem; }
 .article .encadre h3, .article .encadre h4 { margin-top: 0; }
 .encadre p:last-child, .encadre ul:last-child { margin-bottom: 0; }
+.alerte p:last-child, .alerte ul:last-child { margin-bottom: 0; }
 .modele { background: #fff; border: 1px solid var(--bord-2); border-radius: 6px; padding: 1.5rem 1.75rem; margin: 1.5rem 0; font-family: var(--serif); font-size: .98rem; line-height: 1.55; }
 .modele p { margin-bottom: .8em; }
 .modele .champ-libre { color: var(--gris); }
@@ -301,6 +302,10 @@ details.faq[open] summary { border-bottom: 1px solid var(--bord); }
 .article .comparatif { margin: 1rem 0 1.5rem; }
 .article .comparatif table, .comparatif table { margin: 0; }
 .article .comparatif th:first-child, .article .comparatif td:first-child { width: 26%; }
+/* Tableau dont la première colonne porte les textes longs (ex. délais de prescription) */
+.article .comparatif.col-large th:first-child, .article .comparatif.col-large td:first-child { width: 50%; }
+/* Mobile : la règle de largeur ci-dessus ne doit pas comprimer l'intitulé des cartes empilées */
+@media (max-width: 640px) { .article .comparatif th:first-child, .article .comparatif td:first-child, .article .comparatif.col-large th:first-child, .article .comparatif.col-large td:first-child { width: auto; } }
 .meta-article { font-size: .9rem; color: var(--gris); margin-bottom: 1.5rem; }
 .sommaire { background: var(--carte); border: 1px solid var(--bord); border-radius: var(--rayon); padding: 1rem 1.3rem; margin: 1.5rem 0 2rem; }
 .sommaire strong { color: var(--encre); display: block; margin-bottom: .4rem; }
@@ -438,8 +443,9 @@ footer.site .accroche { color: #c5d0dc; max-width: 34ch; }
 .nav-pays a:hover, .nav-pays a[aria-current="page"] { color: var(--accent); border-bottom-color: var(--accent); }
 @media (max-width: 600px) {
   .nav-pays .inner { gap: .9rem; } .nav-pays a { font-size: .88rem; }
-  /* Fondu à droite : indique que la sous-navigation défile */
-  .nav-pays ul { scroll-padding-inline: 16px; padding-right: 1.5rem; -webkit-mask-image: linear-gradient(to right, #000 82%, transparent); mask-image: linear-gradient(to right, #000 82%, transparent); }
+  /* Fondu à droite : indique que la sous-navigation défile.
+     Fondu à gauche (sur une marge ajoutée, la position des liens ne change pas) : masque le bout du lien précédent quand la liste a défilé. */
+  .nav-pays ul { margin-left: -1.25rem; padding-left: 1.25rem; scroll-padding-inline: 16px; scroll-padding-inline-start: 1.25rem; padding-right: 1.5rem; -webkit-mask-image: linear-gradient(to right, transparent 0, #000 1rem, #000 82%, transparent); mask-image: linear-gradient(to right, transparent 0, #000 1rem, #000 82%, transparent); }
 }
 
 /* Téléphone à côté du menu sur mobile */
