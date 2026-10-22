@@ -100,8 +100,12 @@ Le site conditionsgenerales.com doit donc vivre dans un dépôt distinct.
    `git push https://github.com/wds-art77/conditionsgenerales.git claude/conditionsgenerales-be:main`
 3. Dans le nouveau dépôt : **Settings → Pages → Source : Deploy from a branch**, branche `main`, dossier
    `/ (root)`, **Save**.
-4. **Settings → Pages → Custom domain** : `conditionsgenerales.com`, **Save**, puis cochez **Enforce HTTPS**
-   dès que la case est disponible (le fichier `CNAME` du dépôt contient déjà `conditionsgenerales.com`).
+4. Le site est alors visible immédiatement à l'adresse `https://wds-art77.github.io/conditionsgenerales/`
+   (tous les liens du site sont relatifs, il fonctionne aussi bien sous ce chemin que sur le domaine).
+5. Une fois le DNS configuré (ci-dessous) : **Settings → Pages → Custom domain** : `conditionsgenerales.com`,
+   **Save** (GitHub ajoute lui-même un fichier `CNAME` dans la branche), puis cochez **Enforce HTTPS**
+   dès que la case est disponible. Ne renseignez le domaine qu'après le DNS : tant que le domaine ne répond pas,
+   GitHub redirigerait l'adresse github.io vers un domaine inactif.
 
 ### DNS du domaine conditionsgenerales.com
 
