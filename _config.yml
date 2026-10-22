@@ -1,0 +1,4 @@
+# GitHub Pages : les pages HTML sont servies telles quelles (aucune n'a d'en-tête YAML).
+# Le README reste dans le dépôt mais n'est pas publié sur le site.
+exclude:
+  - README.md

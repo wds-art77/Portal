@@ -45,10 +45,21 @@ sur la page `mentions-legales.html` (classe `a-completer`) ou signalés ici :
    `<div class="avatar" aria-hidden="true">WS</div>` par
    `<div class="avatar"><img src="assets/portrait.jpg" alt="" width="68" height="68"></div>`
    (préfixe `../` ou `../../` selon le dossier de la page).
-7. **Contenu juridique** : les textes ont été rédigés et vérifiés sur la base de la législation belge en
-   vigueur en octobre 2026, avec sources officielles, mais ils engagent l'avocat qui publie le site : une
-   relecture finale par vos soins reste indispensable, en particulier pour les taux, montants et délais
-   (intérêts de retard de la loi du 2 août 2002, plafonds du Livre XIX du Code de droit économique), qui changent.
+7. **Contenu juridique** : les textes ont été rédigés et vérifiés en octobre 2026, pays par pays, à partir de
+   fiches juridiques sourcées (législation belge, française, luxembourgeoise et suisse en vigueur), mais ils
+   engagent l'avocat qui publie le site : une relecture finale par vos soins reste indispensable, en particulier
+   pour les taux, montants et délais, qui changent (intérêts de retard, plafonds de compétence, seuils).
+8. **Déontologie** : faire confirmer par écrit, par les ordres concernés, le titre sous lequel l'activité est
+   exercée à Paris, au Luxembourg et en Suisse, puis compléter la section « Exercice dans les quatre pays » des
+   mentions légales ; documenter la notification au bâtonnier de l'offre de première analyse gratuite
+   (à défaut, retirer cette offre de l'accueil et de `analyse-gratuite.html`).
+9. **Assurance responsabilité professionnelle** : une fois l'assureur et la couverture géographique confirmés,
+   ajouter une section « Assurance responsabilité professionnelle » aux mentions légales (art. III.74, 14°, CDE).
+10. **Protection des données** : signer le contrat de sous-traitance (art. 28 RGPD) avec le service de
+    formulaires et reprendre son nom, son pays d'établissement et la localisation de ses serveurs dans
+    `confidentialite.html`.
+11. **À propos** : confirmer les fonctions d'enseignement mentionnées (Université de Hasselt, Haute École PXL) ;
+    à défaut, supprimer la phrase.
 
 ## Fonctionnement des formulaires
 
@@ -68,13 +79,14 @@ Pour changer la limite, modifiez `LIMITE` dans `assets/formulaire.js` et le text
 
 Les textes ont été produits en octobre 2026 selon la méthode suivante :
 
-1. Huit fiches de faits juridiques belges (Livre 5 du Code civil, Code de droit économique B2C et B2B,
-   recouvrement, construction, horeca/immobilier/freelances, e-commerce, déontologie de l'avocat et RGPD),
-   rédigées à partir de sources officielles (textes adoptés par la Chambre, Moniteur belge, SPF, ONSS, IPI,
-   AVOCATS.BE) puis contestées par deux relecteurs indépendants (actualité 2023-2026 ; exactitude des articles,
-   montants et délais) et corrigées. Tout point non vérifiable a été marqué « non vérifié » et exclu du site.
-2. Chaque page a été rédigée à partir de ces seules fiches, puis relue par un vérificateur juridique et un
-   relecteur éditorial, et corrigée (plus de 600 constats traités).
+1. Pour chaque pays, des fiches de faits juridiques (Belgique : huit fiches ; France, Luxembourg et Suisse :
+   quatre fiches chacun, sur les contrats et conditions générales, la consommation et le commerce électronique,
+   le paiement et le recouvrement, la construction, les secteurs et la déontologie), rédigées à partir de
+   sources officielles (Moniteur belge, Légifrance, Legilux, Fedlex, sites des ordres et des administrations)
+   puis contestées par deux relecteurs indépendants (actualité 2020-2026 ; exactitude des articles, montants
+   et délais) et corrigées. Tout point non vérifiable a été marqué « non vérifié » et exclu du site.
+2. Chaque page a été rédigée à partir des seules fiches de son pays, puis relue par un vérificateur juridique
+   et un relecteur éditorial, et corrigée ; un contrôle de cohérence par section et entre sections a suivi.
 3. Contrôles automatiques : HTML valide (html-validate), liens internes et ancres, hiérarchie des titres,
    étiquettes de formulaire, captures d'écran de chaque page en largeur 1280 et 390 px.
 
