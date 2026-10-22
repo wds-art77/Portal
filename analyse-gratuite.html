@@ -18,9 +18,9 @@
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/icone-180.png">
-  <link rel="stylesheet" href="assets/style.css?v=202610221218">
-  <script src="assets/site.js?v=202610221218" defer></script>
-  <script src="assets/formulaire.js?v=202610221218" defer></script>
+  <link rel="stylesheet" href="assets/style.css?v=202610221305">
+  <script src="assets/site.js?v=202610221305" defer></script>
+  <script src="assets/formulaire.js?v=202610221305" defer></script>
 </head>
 <body>
   <a class="skip" href="#contenu">Aller au contenu</a>
@@ -84,10 +84,10 @@
                 <input type="text" id="prenom" name="Prénom" autocomplete="given-name"><div class="erreur-champ" id="err-prenom"></div></div>
               <div class="champ"><label for="nom">Nom <span class="req">*</span></label>
                 <input type="text" id="nom" name="Nom" autocomplete="family-name"><div class="erreur-champ" id="err-nom"></div></div>
-              <div class="champ"><label for="entreprise">Entreprise ou nom commercial <span class="req">*</span></label>
-                <input type="text" id="entreprise" name="Entreprise" autocomplete="organization"><div class="erreur-champ" id="err-entreprise"></div></div>
+              <div class="champ"><label for="entreprise">Entreprise <span class="req">*</span></label>
+                <input type="text" id="entreprise" name="Entreprise" autocomplete="organization" aria-describedby="aide-entreprise"><div class="aide" id="aide-entreprise">Raison sociale ou nom commercial.</div><div class="erreur-champ" id="err-entreprise"></div></div>
               <div class="champ"><label for="numero-entreprise">Numéro d'entreprise</label>
-                <input type="text" id="numero-entreprise" name="Numéro d'entreprise" placeholder="BCE, SIREN, RCS ou IDE selon votre pays"></div>
+                <input type="text" id="numero-entreprise" name="Numéro d'entreprise" placeholder="BCE, SIREN, RCS ou IDE"></div>
               <div class="champ"><label for="email">E-mail <span class="req">*</span></label>
                 <input type="email" id="email" name="email" autocomplete="email"><div class="erreur-champ" id="err-email"></div></div>
               <div class="champ"><label for="telephone">Téléphone <span class="req">*</span></label>
@@ -200,7 +200,7 @@
     </div>
     <div class="faqs">
       <details class="faq" id="faq-gratuit"><summary>L'analyse est-elle vraiment gratuite&nbsp;?</summary><div class="faq-corps"><p>Oui. Le premier avis est gratuit et ne vous engage à rien. Si vous souhaitez ensuite faire rédiger ou corriger vos documents, vous recevez d'abord une proposition d'honoraires fixe&nbsp;: vous savez à l'avance ce que la mission coûte avant de la confier.</p></div></details>
-      <details class="faq" id="faq-delai"><summary>Dans quel délai recevrai-je une réponse&nbsp;?</summary><div class="faq-corps"><p>Nous répondons sous 48 heures ouvrables. En période de forte activité, ce délai peut s'allonger de quelques jours&nbsp;; vous êtes alors prévenu.</p></div></details>
+      <details class="faq" id="faq-delai"><summary>Dans quel délai recevrai-je une réponse&nbsp;?</summary><div class="faq-corps"><p>Nous répondons en principe sous 48 heures ouvrables. En période de forte activité, ce délai peut s'allonger de quelques jours&nbsp;; vous êtes alors prévenu.</p></div></details>
       <details class="faq" id="faq-sans-documents"><summary>Je n'ai pas encore de conditions générales. Puis-je quand même faire une demande&nbsp;?</summary><div class="faq-corps"><p>Bien sûr. Décrivez votre activité et vos clients. Nous vous indiquons les documents dont votre entreprise a besoin (conditions générales, contrat de prestation, contrat d'entreprise, convention de collaboration…) et les points à régler en priorité.</p></div></details>
       <details class="faq" id="faq-documents"><summary>Quels documents puis-je envoyer&nbsp;?</summary><div class="faq-corps"><p>Vos conditions générales, vos modèles de devis ou de bons de commande, vos contrats types, ou les conditions figurant sur votre site. Un seul fichier peut être joint au formulaire&nbsp;; pour en envoyer plusieurs, regroupez-les dans un PDF ou envoyez-les ensuite par e-mail à <a href="mailto:contact@conditionsgenerales.com">contact@conditionsgenerales.com</a>.</p></div></details>
       <details class="faq" id="faq-confidentialite"><summary>Mes documents sont-ils traités de manière confidentielle&nbsp;?</summary><div class="faq-corps"><p>Oui. Votre demande est traitée par un avocat, tenu au secret professionnel. Vos données ne servent qu'à traiter votre demande, conformément à notre <a href="confidentialite.html">politique de protection des données</a>.</p></div></details>

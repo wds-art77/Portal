@@ -34,4 +34,11 @@
   }
   ouvrirCible();
   window.addEventListener("hashchange", ouvrirCible);
+
+  // Sous-navigation pays défilante (mobile) : amène l'entrée active dans la zone visible
+  var actif = document.querySelector(".nav-pays [aria-current=\"page\"]");
+  var liste = actif && actif.closest("ul");
+  if (liste && liste.scrollWidth > liste.clientWidth) {
+    liste.scrollLeft += actif.getBoundingClientRect().left - liste.getBoundingClientRect().left - 16;
+  }
 })();
