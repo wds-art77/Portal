@@ -380,3 +380,42 @@ footer.site .accroche { color: #c5d0dc; max-width: 34ch; }
 
 /* Mentions à compléter avant la mise en ligne (voir README) */
 .a-completer { background: #fff3bf; border-bottom: 2px dotted #c9a227; padding: 0 .25em; border-radius: 3px; }
+
+/* ---------- Navigation par pays (sous-navigation) ---------- */
+.nav-pays { background: #fff; border-bottom: 1px solid var(--bord); }
+.nav-pays .inner { display: flex; align-items: center; gap: 1.25rem; min-height: 48px; }
+.nav-pays .pays-nom { font-weight: 800; color: var(--accent); font-size: .85rem; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; }
+.nav-pays ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 1.25rem; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+.nav-pays ul::-webkit-scrollbar { display: none; }
+.nav-pays li { margin: 0; white-space: nowrap; }
+.nav-pays a { display: inline-block; color: var(--encre-2); text-decoration: none; font-weight: 600; font-size: .92rem; padding: .75rem 0; border-bottom: 2px solid transparent; }
+.nav-pays a:hover, .nav-pays a[aria-current="page"] { color: var(--accent); border-bottom-color: var(--accent); }
+@media (max-width: 600px) { .nav-pays .inner { gap: .9rem; } .nav-pays a { font-size: .88rem; } }
+
+/* Téléphone à côté du menu sur mobile */
+.tel-mobile { display: none; }
+@media (max-width: 860px) {
+  .tel-mobile { display: inline-flex; margin-left: auto; margin-right: .6rem; }
+  header.site .inner { justify-content: flex-start; }
+  .nav-principale .tel { display: none; }
+}
+
+/* Pied de page : cabinet + quatre pays */
+.pied-colonnes { grid-template-columns: 1.6fr repeat(4, 1fr); }
+.pied-liens-cabinet { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: .25rem 1rem; }
+.pied-liens-cabinet li { margin: 0; }
+footer.site .pied-cabinet .logo { margin-bottom: .5rem; }
+footer.site .petit { color: #a9b7c6; }
+@media (max-width: 1000px) { .pied-colonnes { grid-template-columns: 1fr 1fr 1fr; } .pied-cabinet { grid-column: 1 / -1; } }
+@media (max-width: 600px) { .pied-colonnes { grid-template-columns: 1fr 1fr; } }
+
+/* Cartes de pays (accueil global) */
+.grille-pays { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+@media (max-width: 960px) { .grille-pays { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .grille-pays { grid-template-columns: 1fr; } }
+.carte-pays { background: var(--carte); border: 1px solid var(--bord); border-radius: var(--rayon); padding: 1.5rem; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: .5rem; transition: transform .15s, box-shadow .15s; }
+.carte-pays:hover { transform: translateY(-3px); box-shadow: var(--ombre); }
+.carte-pays .drapeau { width: 40px; height: 28px; border-radius: 4px; border: 1px solid var(--bord); display: block; overflow: hidden; }
+.carte-pays h3 { margin: 0; color: var(--encre); }
+.carte-pays p { margin: 0; color: var(--gris); font-size: .95rem; }
+.carte-pays .lien-fleche { margin-top: auto; align-self: flex-start; }

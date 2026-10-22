@@ -1,19 +1,19 @@
-# conditionsgenerales.be
+# conditionsgenerales.com
 
 Site vitrine statique (HTML, CSS et un peu de JavaScript, sans serveur ni base de données) du service
-**ConditionsGenerales.be** du Cabinet d'avocats de Saeger : conditions générales et contrats sur mesure
-pour les indépendants et PME de Wallonie et de Bruxelles. Équivalent francophone, en droit belge, du site
-flamand algemenevoorwaarden.be.
+**ConditionsGenerales.com** du Cabinet d'avocats de Saeger : conditions générales et contrats sur mesure,
+en français, pour les indépendants et PME de **Belgique, de France, du Luxembourg et de Suisse**. Le site
+est organisé en quatre sections nationales (`belgique/`, `france/`, `luxembourg/`, `suisse/`), chacune
+limitée au droit de son pays, plus des pages communes (accueil, à propos, contact, analyse gratuite,
+pages légales). Inspiré, pour la structure, du site flamand algemenevoorwaarden.be.
 
 ## Contenu du site
 
 | Rubrique | Fichiers |
 |---|---|
-| Accueil | `index.html` |
-| Conditions générales (service) | `conditions-generales.html` + `conditions-generales/` (webshop, entrepreneurs, freelances, indépendants) |
-| Contrats | `contrats.html` |
-| Secteurs | `secteurs.html` + `secteurs/` (construction et six métiers, horeca, immobilier, freelances) |
-| Base de connaissances | `connaissances.html` + `connaissances/` (11 articles : mise en demeure, facture impayée, recouvrement, prescription…) |
+| Accueil global (choix du pays) | `index.html` |
+| Section Belgique | `belgique/index.html`, `belgique/conditions-generales.html` + `belgique/conditions-generales/` (webshop, entrepreneurs, freelances, indépendants), `belgique/contrats.html`, `belgique/secteurs.html` + `belgique/secteurs/` (construction et six métiers, horeca, immobilier, freelances), `belgique/connaissances.html` + `belgique/connaissances/` (11 articles) |
+| Sections France, Luxembourg, Suisse | `france/`, `luxembourg/`, `suisse/` : même organisation (accueil national, conditions générales, webshop, contrats, secteurs, base de connaissances), en droit national |
 | Analyse gratuite (formulaire) | `analyse-gratuite.html` → `merci.html` |
 | Contact (formulaire) | `contact.html` → `merci.html` |
 | À propos | `a-propos.html` |
@@ -31,9 +31,9 @@ sur la page `mentions-legales.html` (classe `a-completer`) ou signalés ici :
 
 1. **Mentions légales** (`mentions-legales.html`) : numéro d'entreprise (BCE) et numéro de TVA, barreau(x)
    d'inscription, adresse du cabinet à Liège, assureur de responsabilité professionnelle.
-2. **Adresse e-mail** : le site affiche `contact@conditionsgenerales.be`. Créez cette boîte chez votre
+2. **Adresse e-mail** : le site affiche `contact@conditionsgenerales.com`. Créez cette boîte chez votre
    fournisseur de messagerie ou remplacez l'adresse dans toutes les pages
-   (`grep -rl "contact@conditionsgenerales.be" . | xargs sed -i 's/contact@conditionsgenerales.be/votre@adresse/g'`).
+   (`grep -rl "contact@conditionsgenerales.com" . | xargs sed -i 's/contact@conditionsgenerales.com/votre@adresse/g'`).
 3. **Téléphone** : le numéro affiché est `+33 7 59 41 78 05` (écrit `+33&nbsp;7&nbsp;59&nbsp;41&nbsp;78&nbsp;05` dans
    le code, avec des espaces insécables). Pour un numéro belge, remplacez ce texte et le lien `tel:+33759417805`
    dans toutes les pages.
@@ -91,7 +91,7 @@ Points de déontologie signalés par les fiches, à trancher par l'avocat avant 
 ## Mise en ligne (GitHub Pages)
 
 GitHub Pages ne sert qu'**un seul site par dépôt** : avocatprodeo.com est déjà servi par le dépôt `Portal`.
-Le site conditionsgenerales.be doit donc vivre dans un dépôt distinct.
+Le site conditionsgenerales.com doit donc vivre dans un dépôt distinct.
 
 1. Sur github.com, créez un dépôt **public** nommé `conditionsgenerales` (sans README), puis donnez-y accès
    à l'application GitHub de Claude (la création du dépôt depuis une session Claude a été refusée par GitHub).
@@ -100,10 +100,10 @@ Le site conditionsgenerales.be doit donc vivre dans un dépôt distinct.
    `git push https://github.com/wds-art77/conditionsgenerales.git claude/conditionsgenerales-be:main`
 3. Dans le nouveau dépôt : **Settings → Pages → Source : Deploy from a branch**, branche `main`, dossier
    `/ (root)`, **Save**.
-4. **Settings → Pages → Custom domain** : `conditionsgenerales.be`, **Save**, puis cochez **Enforce HTTPS**
-   dès que la case est disponible (le fichier `CNAME` du dépôt contient déjà `conditionsgenerales.be`).
+4. **Settings → Pages → Custom domain** : `conditionsgenerales.com`, **Save**, puis cochez **Enforce HTTPS**
+   dès que la case est disponible (le fichier `CNAME` du dépôt contient déjà `conditionsgenerales.com`).
 
-### DNS du domaine conditionsgenerales.be
+### DNS du domaine conditionsgenerales.com
 
 Chez le registraire du domaine (zone DNS) :
 
